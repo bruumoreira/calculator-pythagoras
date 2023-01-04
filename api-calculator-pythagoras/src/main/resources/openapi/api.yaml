@@ -1,0 +1,59 @@
+openapi: 3.0.3
+info:
+  title: "Swagger Calculator Pythagoras - OpenAPI 3.0"
+  description: "|-
+    Develop a calculator that is able to calculate the relationship between the sides of a right triangle (Pythagorean theorem). 
+    
+    The calculator receives the values of the legs (adjacent and opposite) to calculate the value of the hypotenuse."
+
+  contact:
+    email: "bruuna.moreiras@gmail.com"
+  version: "1.0.0"
+tags:
+  - name: "calculator"
+    description: "calculator"
+paths:
+  /calculator/pythagoras:
+    post:
+      tags:
+        - calculator
+      summary: "adds a new value"
+      description: "adds a new value for adjacent and opposite legs"
+      operationId: "calculatorPythagoras"
+      requestBody:
+        description: "Create a new result"
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/PythagorasRequest"
+        required: true
+      responses:
+        '201':
+          description: "Successful operation"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PythagorasResponse"
+components:
+  schemas:
+    PythagorasRequest:
+      required:
+        - adjacentValue
+        - oppositeValue
+      type: object
+      properties:
+        adjacentValue:
+          type: number
+          format: double
+          example: 10.0
+        oppositeValue:
+          type: number
+          format: double
+          example: 10.0
+    PythagorasResponse:
+      type: object
+      properties:
+        result:
+          type: number
+          format: double
+          example: 10.0

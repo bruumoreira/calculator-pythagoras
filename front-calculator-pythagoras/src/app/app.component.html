@@ -1,0 +1,61 @@
+<img src="../assets/background.jpg" alt="Full Background" class="full-bg animation-pulseSlow">
+
+<div id="div-container">
+    <h3 class="h2 text-light text-center push-top-bottom animation-pullDown">
+        <div class="" alt="Teorema de Pitagoras"></div><img src="../assets/teorema_pitagoras.png" class="float-start"
+            width="200px" />
+    </h3>
+
+    <div class="block animation-fadeInQuickInv">
+
+        <div class="block-title">
+            <div class="block-options pull-right">
+            </div>
+            <h2>Calculadora do Teorema Pitágoras</h2>
+        </div>
+
+        <form onsubmit="return false" class="form-horizontal">
+            <div class="form-group">
+                <div class="col-xs-12">
+                    <input type="text" id="adjacentValue" name="adjacentValue" class="form-control mask"
+                        placeholder="Valor do Cateto Adjacente"  [(ngModel)]="adjacentValue">
+                    <span class="text-danger display-none" id="alertaUm"><i>O campo Valor do Cateto Adjacente é
+                            obrigatório!!</i></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-xs-12">
+                    <input type="text" id="oppositeValue" name="oppositeValue" class="form-control mask"
+                        placeholder="Valor do Cateto Oposto"  [(ngModel)]="oppositeValue" >
+                    <span class="text-danger display-none" id="alertaDois"><i>O campo Valor do Cateto Oposto é
+                            obrigatório!!</i></span>
+                </div>
+            </div>
+
+            <div class="row push">
+                <div class="col-xs-12">
+                    <button class="btn btn-primary btn-sm btn-block" id="calc" (click)="calculate()">
+                        <h4>Calcular</h4>
+                    </button>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-xs-12">
+                    <input type="value" id="result" name="result" class="form-control"
+                        placeholder="O valor da hipotenusa é" disabled="disabled" value="{{ resultHypotenuse }}">
+                </div>
+            </div>
+        </form>
+
+    </div>
+
+    <footer class="text-muted text-center animation-pullUp">
+        <small><span>2022</span> &copy;
+            <a href="https://www.linkedin.com/in/bruna-moreira-torres-francisco/" target="_blank">Bruna Moreira
+                Francisco</a>
+        </small>
+    </footer>
+
+</div>
