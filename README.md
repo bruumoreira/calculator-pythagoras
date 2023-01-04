@@ -4,7 +4,11 @@
 Calculadora do Teorema de Pitágoras
 
 ## Descrição
-Desenvolver uma calculadora que seja capaz de calcular a relação entre os lados de um triângulo retângulo (teorema de Pitágora).
+Desenvolver uma calculadora que seja capaz de calcular a relação entre os lados de um triângulo retângulo (teorema de Pitágoras).
+
+<p>
+  <img src="calculadora-pitagoras.gif" alt="Teorema de Pitágoras" style="width:800px; height:450px"/><br>
+</p>
 
 ## Funcionalidades
 A calculadora recebe os valores dos catetos (adjacente e oposto) para calcular o valor da hipotenusa.
