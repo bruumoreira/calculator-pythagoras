@@ -10,7 +10,7 @@ import { PythagorasRequest as PythagorasRequest } from './request/PythagorasRequ
 })
 
 export class CalculatorService {
-  private baseApiUrl = 'http://localhost:80/api/';
+  private baseApiUrl = 'http://localhost/api/';
   private apiUrl = `${this.baseApiUrl}calculator/pythagoras`;
   private httpOptions = {
     headers: new HttpHeaders({
