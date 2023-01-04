@@ -1,0 +1,20 @@
+version: '3'
+services:
+    front-calculator-pythagoras:
+        build: ./front-calculator-pythagoras
+        container_name: front-calculator-pythagoras
+        ports:
+            - "80:80"
+            
+    api-calculator-pythagoras:
+        build: ./api-calculator-pythagoras
+        container_name: api-calculator-pythagoras
+        ports:
+            - "8080:8080"
+        deploy:
+            resources:
+                limits:
+                  cpus: '2'
+                  memory: 512M
+                reservations:
+                  memory: 512M

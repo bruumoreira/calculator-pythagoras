@@ -21,18 +21,33 @@ A calculadora recebe os valores dos catetos (adjacente e oposto) para calcular o
 - Angular CLI: v15.0
 - Node: v16.17
 ## Inicialização 
+### Docker
+1 - Construa a imagem no seu docker:
+```bash
+docker build . -t front-calculator-pythagoras
+```
+2 - Inicializar a imagem na porta 80:
+```bash
+docker run --name front-calculator-pythagoras -p 80:80 -d front-calculator-pythagoras
+```
+3 - Acesse o front-end em <a href="http://localhost" target="_blank">http://localhost
 ### Local
-1 - Construa seu projeto no node/ng:
+1 - Instale as dependências do npm:
+```
+npm install
+```
+2 - Construa seu projeto no node/ng:
 ```bash
 ng build
 ```
-2 - Inicializar via terminal:
+3 - Inicializar via terminal:
 ```bash
 ng serve --port 80
 ```
-3 - Acesse o front-end em <a href="http://localhost" target="_blank">http://localhost
-- Obs: Para um funcionamento adequado, inicialize o back-end.
-
+4 - Acesse o front-end em <a href="http://localhost" target="_blank">http://localhost
+<p>Observações:
+<p><ul>- Para um funcionamento adequado, inicialize o back-end.</ul>
+<p><ul>- Caso não tenha docker alterar o arquivo proxy.conf.json no campo target deixar 'http://localhost', para evitar problemas de CORS .</ul>
 
 ## Colaboradores
 Bruna Stefani Moreira Torres Francisco - <a href="https://www.linkedin.com/in/bruna-moreira-torres-francisco/" target="_blank">LinkedIn</a>
