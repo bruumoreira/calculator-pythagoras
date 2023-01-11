@@ -15,6 +15,7 @@ hipotenusa.
 - Java v17
 - Springboot v2.7
 - Maven v5.4
+- MongoDB
 
 ## Requisitos
 - JDK v17

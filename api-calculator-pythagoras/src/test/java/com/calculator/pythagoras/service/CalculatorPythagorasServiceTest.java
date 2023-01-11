@@ -4,6 +4,7 @@ import com.calculator.pythagoras.exception.BusinessException;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
+import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.internal.util.MockUtil;
 import org.mockito.junit.jupiter.MockitoExtension;
@@ -14,6 +15,9 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @ExtendWith(MockitoExtension.class)
 public class CalculatorPythagorasServiceTest {
+
+    @Mock
+    HistoryPythagorasService historyPythagorasService;
 
     @InjectMocks
     CalculatorPythagorasService service;
@@ -46,15 +50,4 @@ public class CalculatorPythagorasServiceTest {
         assertEquals(BigDecimal.valueOf(12.5), service.calculate(BigDecimal.valueOf(7.5), BigDecimal.valueOf(10)));
     }
 
-
-/*
-    hypotenuseValue
-    ParkingSpot mockParkingSpot = MockUtil.mockParkingSpot();
-    when(repository.existsByLicensePlateCar(Mockito.any())).thenReturn(true);
-    BusinessException thrown = assertThrows(BusinessException.class, () ->
-            service.save(mockParkingSpot)
-    );
-    assertNotNull(thrown);
-    assertEquals("Conflict: License Plate Car is already in use!", thrown.getBusinessMessage());
-}*/
 }

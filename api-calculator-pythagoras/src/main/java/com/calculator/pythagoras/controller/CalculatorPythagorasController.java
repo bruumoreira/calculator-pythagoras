@@ -27,8 +27,6 @@ public class CalculatorPythagorasController implements CalculatorApi {
     public CalculatorPythagorasController(CalculatorPythagorasService service){
         this.pythagorasService = service;
     }
-
-
     @Override
     public ResponseEntity calculatorPythagoras(PythagorasRequest request) {
         try {

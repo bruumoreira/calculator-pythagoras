@@ -11,6 +11,12 @@ import java.math.RoundingMode;
 @Service
 public class CalculatorPythagorasService {
 
+    private HistoryPythagorasService historyPythagorasService;
+
+    public CalculatorPythagorasService(HistoryPythagorasService historyPythagorasService) {
+        this.historyPythagorasService = historyPythagorasService;
+    }
+
     public BigDecimal calculate(BigDecimal adjacentValue, BigDecimal oppositeValue) throws BusinessException {
         if(adjacentValue == null) {
             throw new BusinessException("Value of the adjacent catete is mandatory!");
@@ -22,6 +28,8 @@ public class CalculatorPythagorasService {
         Double powOppositeValue = Math.pow(oppositeValue.doubleValue(), 2);
         Double hypotenuseValue = Math.sqrt(powAdjacentValue + powOppositeValue);
         log.info("The value of the hypotenuse is" + hypotenuseValue);
-        return BigDecimal.valueOf(hypotenuseValue).setScale(1, RoundingMode.UP);
+        BigDecimal resultHypotenuse = BigDecimal.valueOf(hypotenuseValue).setScale(1,RoundingMode.UP);
+        historyPythagorasService.save(adjacentValue, oppositeValue, resultHypotenuse);
+        return resultHypotenuse;
     }
 }
