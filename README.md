@@ -19,6 +19,7 @@ A calculadora recebe os valores dos catetos (adjacente e oposto) para calcular o
 - Java v17.0
 - Springboot v2.7
 - Maven v5.4
+- MongoDB
 - HTML 
 - CSS 
     - Bootstrap v5.2
